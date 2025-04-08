@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Anime</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html">Mangá</a>
+        <a href="animes.html" class="active">Animes</a>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Catálogo de Animes</h1>
+            <button id="addAnimeBtn" class="btn-add">Adicionar Anime</button>
+        </header>
+
+        <div id="loadingIndicator" class="loading-indicator">
+            <div class="spinner"></div>
+        </div>
+
+        <div class="filter-container">
+            <label for="estudioFilter">Filtrar por Estúdio:</label>
+            <select id="estudioFilter">
+                <option value="">Todos os Estúdios</option>
+                <!-- Opções de estúdios serão carregadas aqui -->
+            </select>
+        </div>
+
+        <table id="animesTable">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Ano</th>
+                    <th>Gênero</th>
+                    <th>Estúdio</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Os animes serão listados aqui via JS -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal para adicionar/editar anime -->
+    <div id="animeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Adicionar Anime</h2>
+            <form id="animeForm">
+                <div class="form-group">
+                    <label for="titulo">Título:</label>
+                    <input type="text" id="titulo" name="titulo" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="ano">Ano:</label>
+                    <input type="number" id="ano" name="ano" required min="1900" max="2025">
+                </div>
+
+                <div class="form-group">
+                    <label for="genero">Gênero:</label>
+                    <select id="genero" name="genero" required>
+                        <option value="">Selecione um gênero</option>
+                        <option value="Ação">Ação</option>
+                        <option value="Aventura">Aventura</option>
+                        <option value="Comédia">Comédia</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Fantasia">Fantasia</option>
+                        <option value="Horror">Horror</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Sci-Fi">Sci-Fi</option>
+                        <option value="Slice of Life">Slice of Life</option>
+                        <option value="Esportes">Esportes</option>
+                        <option value="Sobrenatural">Sobrenatural</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="episodios">Número de Episódios:</label>
+                    <input type="number" id="episodios" name="episodios" required min="1">
+                </div>
+
+                <div class="form-group">
+                    <label for="sinopse">Sinopse:</label>
+                    <textarea id="sinopse" name="sinopse" required rows="4"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="estudio">Mangá:</label>
+                    <select id="estudio" name="estudio" required>
+                        <option value="">Selecione o Mangá desse anime</option>
+                        <!-- Opções de estúdios serão carregadas aqui -->
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-submit">Salvar</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="detailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-details">&times;</span>
+            <h2>Detalhes do Anime</h2>
+            <div id="animeDetails">
+                <!-- Detalhes do anime serão mostrados aqui -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/anime.js"></script>
+</body>
+</html>

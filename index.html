@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Mangás </title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="active">Mangá</a>
+        <a href="animes.html">Animes</a>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Mangás Salvos</h1>
+            <button id="addEstudioBtn" class="btn-add">Adicionar Mangá</button>
+        </header>
+
+        <div id="loadingIndicator" class="loading-indicator">
+            <div class="spinner"></div>
+        </div>
+
+        <table id="estudiosTable">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Fundação</th>
+                    <th>País</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Os estúdios serão listados aqui via JS -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal para adicionar/editar estúdio -->
+    <div id="estudioModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Adicionar Mangá</h2>
+            <form id="estudioForm">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="fundacao">Ano de Fundação:</label>
+                    <input type="number" id="fundacao" name="fundacao" required min="2000" max="2025">
+                </div>
+
+                <div class="form-group">
+                    <label for="pais">País:</label>
+                    <input type="text" id="pais" name="pais" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="descricao">Descrição:</label>
+                    <textarea id="descricao" name="descricao" required rows="4"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="website">Website:</label>
+                    <input type="url" id="website" name="website" placeholder="https://exemplo.com">
+                </div>
+
+                <button type="submit" class="btn-submit">Salvar</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="detailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-details">&times;</span>
+            <h2>Detalhes do Estúdio</h2>
+            <div id="estudioDetails">
+                <!-- Detalhes do estúdio serão mostrados aqui -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/estudio.js"></script>
+</body>
+</html>
