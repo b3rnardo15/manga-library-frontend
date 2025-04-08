@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const apiUrl = 'http://localhost:3000/api';
+    const apiUrl = 'https://manga-library-backend-3.onrender.com/api';
     const editoraModal = document.getElementById('editoraModal');
     const editoraForm = document.getElementById('editoraForm');
     const addEditoraBtn = document.getElementById('addEditoraBtn');
