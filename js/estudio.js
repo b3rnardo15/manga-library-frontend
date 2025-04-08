@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const API_URL = 'http://localhost:3000/api';
+    const API_URL = 'https://manga-library-backend-3.onrender.com/api';
     const estudioModal = document.getElementById('estudioModal');
     const estudioForm = document.getElementById('estudioForm');
     const addEstudioBtn = document.getElementById('addEstudioBtn');
