@@ -136,10 +136,6 @@ document.addEventListener('DOMContentLoaded', () => {
             sinopse: document.getElementById('sinopse').value,
             estudio: document.getElementById('estudio').value
         };
-        document.getElementById("modoDarkBtn").addEventListener("click", () => {
-            document.body.classList.toggle("dark-mode");
-          });
-          
 
         try {
             setLoading(true);
